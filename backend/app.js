@@ -1,7 +1,9 @@
-const express   = require('express');   // Import d'express
-const path      = require('path');      // Import de path pour upload des images et gérer les fichiers
-const helmet    = require('helmet');    // Import d'Helmet pour améliorer la sécurité de l'application
-const app       = express();
+const express    = require('express');              // Import d'express
+const path       = require('path');                 // Import de path pour upload des images et gérer les fichiers
+const helmet     = require('helmet');               // Import d'Helmet pour améliorer la sécurité de l'application
+const userRoutes = require('./routes/user.js');     // Import des routes User
+const postRoutes = require('./routes/post.js');     // Import des routes Post
+const app        = express();
 
 // Gestion CORS
 app.use((req, res, next) => {
@@ -15,5 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());                                                // Transforme les données POST en objet JSON
 app.use(helmet());                                                      // Mise en place du X-XSS-Protection / Sécurité
 app.use('/images', express.static(path.join(__dirname, 'images')));     // Permet de charger les fichiers dans le dossier images
+
+app.use('/api/user', userRoutes);
+app.use('/api/post', postRoutes);
 
 module.exports = app;
