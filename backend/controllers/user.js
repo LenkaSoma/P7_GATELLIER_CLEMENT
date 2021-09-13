@@ -22,9 +22,9 @@ exports.profile = (req, res) => {
 // Changer de mot de passe
 exports.changepassword = (req, res) => {
     // A faire
-}
+};
 
 // Supprimer le compte
 exports.deleteAccount = (req, res) => {
     // A faire
-}
+};
