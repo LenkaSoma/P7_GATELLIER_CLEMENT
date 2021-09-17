@@ -1,8 +1,8 @@
 const express    = require('express');              // Import d'express
 const path       = require('path');                 // Import de path pour upload des images et gérer les fichiers
 const helmet     = require('helmet');               // Import d'Helmet pour améliorer la sécurité de l'application
-const userRoutes = require('./routes/user.js');     // Import des routes User
-const postRoutes = require('./routes/post.js');     // Import des routes Post
+const userRoutes = require('./routes/user');        // Import des routes User
+const postRoutes = require('./routes/post');        // Import des routes Post
 const app        = express();
 
 // Gestion CORS
