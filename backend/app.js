@@ -18,6 +18,7 @@ app.use(express.json());                                                // Trans
 app.use(helmet());                                                      // Mise en place du X-XSS-Protection / Sécurité
 app.use('/images', express.static(path.join(__dirname, 'images')));     // Permet de charger les fichiers dans le dossier images
 
+// API ROUTES
 app.use('/api/user', userRoutes);
 app.use('/api/post', postRoutes);
 
