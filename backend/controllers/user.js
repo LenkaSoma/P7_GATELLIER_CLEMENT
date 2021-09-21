@@ -1,3 +1,4 @@
+// Importations
 const bcrypt      = require('bcrypt');
 const jsontoken   = require('jsonwebtoken');
 const models      = require('../models');
