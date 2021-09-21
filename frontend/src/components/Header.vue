@@ -9,21 +9,21 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
       <ul class="navbar-nav mt-2 mt-lg-0">
-        <li class="nav-item" >
+        <li class="nav-item" v-if="user.token!==null">
           <router-link class="nav-link" to="/">Accueil</router-link>
         </li>
-        <li class="nav-item" >
-          <router-link class="nav-link" to="/register">Inscription</router-link>
+        <li class="nav-item" v-if="user.token==null">
+          <router-link class="nav-link" to="/signup">Inscription</router-link>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item" v-if="user.token==null">
           <router-link class="nav-link" to="/login">Connexion</router-link>
         </li>
-        <li class="nav-item" >
-          <router-link class="nav-link" to="/user">
+        <li class="nav-item" v-if="user.token!==null">
+          <router-link class="nav-link" to="/profile">
             <i class="user-icon fas fa-user"></i>
           </router-link>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item" v-if="user.token!==null">
           <button type="button" class="btn btn-danger" @click="disconnect">Déconnexion</button>
         </li>
       </ul>
