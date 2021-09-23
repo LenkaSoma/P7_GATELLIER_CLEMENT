@@ -1,12 +1,12 @@
 <template>
   <main class="main main--connect">
-    <form class="w-75 align-items-center form-block d-flex m-auto shadow rounded">
+    <form class="w-75 align-items-center form-block d-flex m-auto shadow rounded custombg">
       <div class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch">
         <img class="logo align-self-end" src="../assets/icon.svg" alt="Logo Groupomania" />
         <p>
           <small>
             Vous n'avez pas encore de compte,
-            <router-link class="redirection-singup" to="/register">Inscrivez-vous</router-link>
+            <router-link class="redirection-singup" to="/register">inscrivez-vous</router-link>
           </small>
         </p>
       </div>
@@ -58,3 +58,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.custombg { 
+  background-color: #fff !important; 
+}
+</style>

@@ -1,11 +1,10 @@
 <template>
   <div>
     <div class="block-post">
-      <h3>Créer un post</h3>
-      <form enctype="multipart/form-data" action="/create" method="post">
+      <span id='msgReturnAPI' class="mx-3 text-danger text-center" v-if="user.token==null">Vous devez être connecté pour voir cette page.</span>
+      <form enctype="multipart/form-data" action="/create" method="post" v-if="user.token!=null">
         <div class="input-group mb-3">
           <label for="input_text">Que souhaitez-vous dire ?</label>
-          <br />
           <input v-model="contentPost.content" class="input-text" id="input_text" type="text" />
         </div>
 
@@ -19,11 +18,10 @@
           </div>
         </div>
         <input type="submit" class="btn btn-primary" @click.prevent="createPost" value="Envoyer" />
-        <span id='msgReturnAPI' class="mx-3 text-danger" v-if="user.token==null">Veuillez vous connecter</span>
-        <span id='msgReturnAPI' class="mx-3" v-else>{{msgError}}</span>
+        <span id='msgReturnAPI' class="mx-3">{{msgError}}</span>
       </form>
     </div>
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -76,5 +74,8 @@ export default {
 <style>
 .input-text {
     width: 100%;
+    border: 1px solid rgb(36, 36, 36);
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 </style>

@@ -109,6 +109,7 @@ export default {
             window.location.reload();
           }, 2000);
         }).catch(err => {
+          console.log(err);
           this.retourAPI = "Une erreur est survenue, vérifier vos saisies";
         });
       } else {

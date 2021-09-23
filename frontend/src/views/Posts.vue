@@ -41,7 +41,6 @@ export default {
 
 <style lang="scss">
 .wall {
-  background-color: white;
   min-height: 100%;
   padding: 5rem 0 2rem 0;
 }

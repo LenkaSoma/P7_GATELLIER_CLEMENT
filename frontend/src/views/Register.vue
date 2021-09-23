@@ -1,9 +1,7 @@
 <template>
   <main class="main main--connect">
-    <form class="w-75 align-items-center form-block d-flex m-auto shadow rounded">
-      <div
-        class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch"
-      >
+    <form class="w-75 align-items-center form-block d-flex m-auto shadow rounded custombg">
+      <div class="form-block--left d-flex flex-column justify-content-center block-demi-container p-3 text-right align-self-stretch">
         <img class="logo align-self-end" src="../assets/icon.svg" alt="Logo Groupomania" />
         <p>
           <small>
@@ -23,12 +21,7 @@
         </div>
         <div class="form-group">
           <label for="inputPassword">Mot de passe</label>
-          <input
-            type="password"
-            class="form-control"
-            id="inputPassword"
-            v-model="dataSignup.password"
-          />
+          <input type="password" class="form-control" id="inputPassword" v-model="dataSignup.password" />
         </div>
         <button @click.prevent="sendSignup" type="submit" class="btn btn-primary">S'inscrire</button>
       </div>
@@ -75,3 +68,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.custombg { 
+  background-color: #fff !important; 
+}
+</style>
