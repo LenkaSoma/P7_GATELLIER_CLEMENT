@@ -91,11 +91,10 @@ export default {
   },
   methods: {
     deleteAccount() {
-      axios
-        .delete("http://localhost:3000/api/user/delete", { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(() => {
-          localStorage.clear();
-          location.replace(location.origin+'/#/signup');
-        }).catch(error => console.log(error));
+      axios.delete("http://localhost:3000/api/user/delete", { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(() => {
+        localStorage.clear();
+        location.replace(location.origin+'/#/signup');
+      }).catch(error => console.log(error));
     },
     changePassword() {
       if (this.changePwd.newPassword == this.changePwd.RepeatNewPassword && this.changePwd.newPassword != "" && this.changePwd.RepeatNewPassword != "") {
@@ -119,9 +118,10 @@ export default {
     },
     testInputs() {
       //8 caractères dont au minimum une majuscule, une minuscule, un caractère numérique et un caractère spécial
-      const regexPassword = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/;
-      let inputNewPwd = document.getElementById("InputNewPassword");
+      const regexPassword   = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/;
+      let inputNewPwd       = document.getElementById("InputNewPassword");
       let inputRepeatNewPwd = document.getElementById("RepeatInputNewPassword");
+
       inputNewPwd.addEventListener("input", function(e) {
         let value = e.target.value;
         let testValue = regexPassword.test(value);
@@ -131,6 +131,7 @@ export default {
           inputNewPwd.style.backgroundColor = "#f44336";
         }
       });
+      
       inputRepeatNewPwd.addEventListener("input", function() {
         if (inputRepeatNewPwd.value == inputNewPwd.value && regexPassword.test(inputRepeatNewPwd.value)) {
           inputRepeatNewPwd.style.backgroundColor = "#4CAF50";

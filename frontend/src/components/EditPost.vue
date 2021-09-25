@@ -73,12 +73,12 @@ export default {
     deletePost() {
       // On envoie la requête pour supprimer le post
       axios.delete("http://localhost:3000/api/post/delete", {
-          headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-          data: { postId: this.post.id, userIdOrder: this.user.userId }
-        }).then(() => {
-          // On recharge la page pour mettre a jour le visuel
-          window.location.reload();
-        }).catch(error => console.log(error));
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+        data: { postId: this.post.id, userIdOrder: this.user.userId }
+      }).then(() => {
+        // On recharge la page pour mettre a jour le visuel
+        window.location.reload();
+      }).catch(error => console.log(error));
     },
     updatePost() {
       let newInput      = document.getElementById("inputNewText").value;
